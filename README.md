@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# 🍽️ Food Product Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based web application that allows users to explore food products using the [OpenFoodFacts API](https://world.openfoodfacts.org/). The app supports search by **product name** or **barcode**, **filtering by category**, **sorting**, and viewing detailed **nutritional information** for each product.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### 1. Homepage
+- Displays a list of food products fetched from the OpenFoodFacts API.
+- Each product card shows:
+  - Product Name
+  - Image (with fallback)
+  - Category
+  - Ingredients (if available)
+  - Nutrition Grade (A–E)
+- Infinite scroll / "Load More" button for pagination.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Search
+- **Name Search**: Search for products by name.
+- **Barcode Search**: Enter barcode to get exact product details.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Category Filter
+- Dropdown to filter by food categories (beverages, dairy, snacks, etc.).
+- Categories dynamically fetched from the API (fallback options available).
 
-### `npm test`
+### 4. Sort Functionality
+- Sort product list by:
+  - Name (A-Z or Z-A)
+  - Nutrition Grade (best to worst or worst to best)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Product Detail Page
+- Shows complete details:
+  - Product name, image, and brand
+  - Nutrition grade
+  - Full list of ingredients
+  - Nutritional values (Energy, Fat, Carbs, Protein, etc.)
+  - Labels like vegan, gluten-free, etc.
 
-### `npm run build`
+### 6. Responsive UI
+- Fully mobile and desktop responsive.
+- Clean and modern UI built using **Tailwind CSS**.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Tech         | Purpose                      |
+|--------------|------------------------------|
+| ReactJS      | Frontend Framework           |
+|  CSS3        | Styling                      |
+| OpenFoodFacts API | Data Source             |
+| Lucide-React | Icons                        |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧠 Methodology
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application is designed as a single-page React app with the following architecture:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **State Management**: `useState` and `useEffect` are used to manage search state, category filters, and paginated product lists.
+- **Search & Filter**:
+  - Unified search bar supports both name and barcode lookup.
+  - API endpoints are called conditionally based on user input.
+- **Performance**:
+  - Only fetches more products when "Load More" is clicked.
+  - Handles API fallback if the OpenFoodFacts server is slow or unresponsive.
+- **User Experience**:
+  - Placeholder images, loading states, and graceful error messages enhance usability.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🕓 Time Taken
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Total Time:** ~10–12 hours  
+**Breakdown:**
+- Initial setup & API integration: 2 hours  
+- Search & barcode logic: 2.5 hours  
+- Category filtering & sorting: 2 hours  
+- Product detail layout: 2.5 hours  
+- Tailwind styling & responsiveness: 2 hours  
+- Testing, fallback handling & error states: 1 hour
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+Project Live Link:https://foodexplorer-mauve.vercel.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
